@@ -9,6 +9,7 @@ describe('ReadsAccountNumbers', () => {
   describe('#read', () => {
     let filePath = getFixture('accountNumbers.txt')
     let accountNum = [1,2,3,4,5,6,7,8,9]
+    let filePath = getFixturePath('accountNumbers.txt')
 
     it ('should return an array of objects', () => {
       let result = subject.read(filePath)
