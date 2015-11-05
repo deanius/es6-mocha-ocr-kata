@@ -1,23 +1,24 @@
 {
-  "name": "chai-es6-sample",
+  "name": "ocr-kata-es2015",
   "version": "0.0.1",
   "description": "An sample module that shows how to use Mocha, Chai and Istanbul to test and generate coverage for ES6 code.",
-  "main": "rectangle.js",
   "scripts": {
     "test": "mocha --compilers js:babel/register",
+    "test:watch": "mocha --growl --watch --compilers js:babel/register",
+    "setup:growl": "gem install terminal-notifier; npm install growl",
     "coverage": "istanbul cover _mocha -- --compilers js:babel/register",
     "coverage-es6": "babel-node ./node_modules/.bin/isparta cover _mocha"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/argelius/chai-es6-sample.git"
+    "url": "git+https://github.com/deanius/ocr-kata-es2015.git"
   },
-  "author": "Andreas Argelius <andreas@argeli.us>",
+  "author": "Dean Radcliffe <deanmisc@yahoo.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/argelius/chai-es6-sample/issues"
+    "url": "https://github.com/deanius/ocr-kata-es2015/issues"
   },
-  "homepage": "https://github.com/argelius/chai-es6-sample#readme",
+  "homepage": "https://github.com/deanius/ocr-kata-es2015",
   "devDependencies": {
     "babel": "^5.8.19",
     "chai": "^3.2.0",
