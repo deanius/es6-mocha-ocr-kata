@@ -1,28 +1,28 @@
 require('./specHelper')
 
-let AccountNumber = (accountNumString) => {}
-AccountNumber.prototype.digits = td.function('#digits')
+let AccountNumber = () => {}
+let FileReader = () => {}
+FileReader.prototype.read = td.function('#read')
 
-let subject = require('../lib/readsAccountNumbers')(AccountNumber)
+let subject = require('../lib/readsAccountNumbers')(new FileReader(), AccountNumber)
 
 describe('ReadsAccountNumbers', () => {
   describe('#read', () => {
-    let filePath = getFixture('accountNumbers.txt')
-    let accountNum = [1,2,3,4,5,6,7,8,9]
     let filePath = getFixturePath('accountNumbers.txt')
+    let accountFileContents = [
+      '123456789',
+      '987654321'
+    ]
+    td.when(FileReader.prototype.read(filePath)).thenReturn(accountFileContents)
 
     it ('should return an array of objects', () => {
       let result = subject.read(filePath)
-
       expect(result).to.be.instanceof(Array)
     })
 
     it ('should return an array of objects that have digits', () => {
-      td.when(AccountNumber.prototype.digits()).thenReturn(accountNum)
-
       let result = subject.read(filePath)
-
-      expect(result[0].digits()).to.equal(accountNum)
+      expect(result[0]).to.be.instanceof(AccountNumber)
     })
   })
 })
