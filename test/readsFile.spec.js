@@ -4,8 +4,14 @@ let path = require('path')
 let subject = require(path.join(__dirname, '..', 'lib', 'readsFile'));
 
 describe('ReadsFile', () => {
+  describe('#read', () => {
+    it ('should returns the contents of the file', () => {
+      let filePath = path.join(__dirname, 'data', 'accountNumbers.txt')
 
-  it('should be defined', () => {
-    expect(subject).to.exist
+      let result = subject.read(filePath)
+
+      expect(result).to.equal('foo\n')
+    })
+
   })
 });
