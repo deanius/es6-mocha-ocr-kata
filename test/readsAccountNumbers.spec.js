@@ -15,12 +15,7 @@ describe('ReadsAccountNumbers', () => {
     ]
     td.when(FileReader.prototype.read(filePath)).thenReturn(accountFileContents)
 
-    it ('should return an array of objects', () => {
-      let result = subject.read(filePath)
-      expect(result).to.be.instanceof(Array)
-    })
-
-    it ('should return an array of objects that have digits', () => {
+    it ('should return an array of AccountNumbers', () => {
       let result = subject.read(filePath)
       expect(result[0]).to.be.instanceof(AccountNumber)
     })

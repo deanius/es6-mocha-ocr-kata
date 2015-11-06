@@ -4,7 +4,7 @@ let subject = require('../lib/readsFile')
 
 describe('ReadsFile', () => {
   describe('#read', () => {
-    it ('should return an array of line groups', () => {
+    it ('should return an array of 4-line groups', () => {
       let filePath = getFixturePath('dummyData.txt')
 
       let result = subject.read(filePath)
