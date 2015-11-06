@@ -3,10 +3,10 @@ require('./specHelper')
 let AccountNumber = () => {}
 
 let ParsesAccountNumber = () => {}
-ParsesAccountNumber.prototype.parse = td.function('#parse')
+ParsesAccountNumber.prototype.parse = td.function('ParsesAccountNumber#parse')
 
 let ReadsFile = () => {}
-ReadsFile.prototype.read = td.function('#read')
+ReadsFile.prototype.read = td.function('ReadsFile#read')
 
 let subject = require('../lib/ReadsAccountNumbers')(ReadsFile, ParsesAccountNumber)
 
@@ -26,6 +26,6 @@ describe('ReadsAccountNumbers', () => {
 
       expect(result).to.be.instanceof(Array)
       expect(result[0]).to.be.instanceof(AccountNumber)
-    });
-  });
+    })
+  })
 })
