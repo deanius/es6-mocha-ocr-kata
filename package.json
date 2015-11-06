@@ -24,7 +24,8 @@
     "isparta": "^3.0.4",
     "istanbul": "^0.3.17",
     "mocha": "^2.3.3",
-    "testdouble": "^0.6.0"
+    "testdouble": "^0.6.0",
+    "underscore.string": "^3.2.2"
   },
   "dependencies": {
     "lodash": "^3.10.1"

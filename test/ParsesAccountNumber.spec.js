@@ -1,19 +1,29 @@
 require('./specHelper')
 
-let subject = require('../lib/parsesAccountNumber')
+let ParsesDigit = {
+  parse: td.function('#parse')
+}
 
-let lineArray = (`
-    _  _     _  _  _  _  _
-  | _| _||_||_ |_   ||_||_|
-  ||_  _|  | _||_|  ||_| _|
+let subject = require('../lib/parsesAccountNumber')(ParsesDigit)
 
-`).replace(/^\n/, '').split('\n')
+let readAccountNumber = [
+  '    _  _ ',
+  '  | _| _|',
+  '  ||_  _|'
+]
 
-let digits = "123456789"
+let asciiForOne   = ['   ', '  |', '  |']
+let asciiForTwo   = [' _ ', ' _|', '|_ ']
+let asciiForThree = [' _ ', ' _|', ' _|']
 
 describe('ParsesAccountNumber', () => {
-  it('returns the digits represented by an array of ASCII strings', () => {
-    let result = subject(lineArray)
-    expect(result).to.eql(digits)
+  describe('#parse', () => {
+    it('returns the digits represented by an array of ASCII strings', () => {
+      td.when(ParsesDigit.parse(asciiForOne)).thenReturn("1")
+      td.when(ParsesDigit.parse(asciiForTwo)).thenReturn("2")
+      td.when(ParsesDigit.parse(asciiForThree)).thenReturn("3")
+      let result = subject.parse(readAccountNumber)
+      expect(result).to.eql("123")
+    })
   })
 })
