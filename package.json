@@ -25,5 +25,8 @@
     "istanbul": "^0.3.17",
     "mocha": "^2.3.3",
     "testdouble": "^0.6.0"
+  },
+  "dependencies": {
+    "lodash": "^3.10.1"
   }
 }
