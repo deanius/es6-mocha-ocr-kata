@@ -12,7 +12,7 @@ ReadsAccountNumbers
 
   ReadsFile: filePath => [ [top, middle, bottom], ... ]
 
-  ParsesAccountNumber: [top, middle, bottom] => digitString
+  ParsesAccountNumber: [top, middle, bottom] => AccountNumber (digits string)
 
     ParsesDigit: [top, middle, bottom] => singleDigit
 
