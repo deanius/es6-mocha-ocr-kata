@@ -9,11 +9,11 @@ Here is the layout of objects we will build.
 ```
 
 ReadsAccountNumbers
-                
+
   ReadsFile: filePath => [ [top, middle, bottom], ... ]
 
   ParsesAccountNumber: [top, middle, bottom] => digitString
-  
+
     ParsesDigit: [top, middle, bottom] => singleDigit
 
 ```
