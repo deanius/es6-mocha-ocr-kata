@@ -10,7 +10,7 @@ describe('ReadsFile', () => {
       let result = subject.read(filePath)
 
       expect(result).to.be.instanceof(Array)
-      expect(result[0]).to.eql(['foo', 'bar', 'baz', 'qux']) //deep equal
+      expect(result[0]).to.eql(['foo', 'bar', 'baz']) //deep equal
     })
   })
 })
